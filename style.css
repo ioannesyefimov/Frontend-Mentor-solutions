@@ -1,0 +1,501 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+:root{
+    --clr-primary: hsl(300, 43%, 22%);
+    --clr-second:hsl(333, 80%, 67%);
+
+    --Dark_Magenta: hsl(303, 10%, 53%);
+    --Light_Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+
+    --ff-base: 'League Spartan', sans-serif;
+    --fw-light: 400;
+    --fw-regular: 500;
+    --fw-bold: 700;
+}
+body{
+  font-size:14px;
+  font-family: var(--ff-base);
+  color: var(--White);
+  max-width: 100%;
+  height: auto;
+  text-align: center;
+  
+  
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:4rem;
+  background-image: url(images/bg-pattern-top-desktop.svg),
+  url(images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: max(50%, 400px) 25%;
+  background-position: top left, bottom right;
+  height: auto;
+}
+
+
+/* header */
+/* FOR DEKSTOP */
+
+header{
+
+justify-items: center;
+align-items: center;
+text-align: center;
+padding:50px;
+
+}
+header h1{
+    color: var(--clr-primary);
+    font-weight: var(--fw-bold);
+    font-size: 3rem;
+
+    line-height: 0.9;
+    margin-bottom: 30px;
+    font-family: var(--fw-base);
+}
+p{
+    font-weight: var(--fw-regular);
+    font-size: 1.35rem;
+    line-height: 1.8rem;
+    font-family: var(--ff-base);
+ font-weight: var(--fw-bold);
+    color: var(--Dark_Magenta);
+   
+}
+.reviews{
+ 
+    display:flex;
+    flex-direction: column;
+    width: 75vw;
+    margin-bottom: 40px;
+   
+
+}
+.stars {
+    display: flex;
+    justify-content: center;
+
+
+}
+.star {
+    margin-inline: 5px;
+}
+.review-text{
+    text-align: center;
+    color: var(--clr-primary);
+    font-weight: var(--fw-bold);
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+.review{
+    padding: 1rem 10px;
+   
+    background-color:  var(--Light_Magenta);
+    margin: 10px 0px;
+    border-radius: 10px;
+    
+}
+
+/* Quotes */
+
+.quotes{
+padding: 15px;
+    display: flex;
+    flex-direction: column;
+   padding-bottom: 50px;
+  
+
+}
+.quote {
+    align-self: center;
+    color: var(--White);
+    font-weight: var(--fw-regular);
+    line-height: 1.2;
+    font-size: 1.5rem;
+    
+}
+.card {
+   
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    flex: 1 0;
+    background-color: var(--clr-primary);
+    padding: 30px;
+    margin:10px
+   
+}
+.split img{
+    border-radius: 50px;
+    width: 9vw;
+}
+.split{
+    display: flex;
+    align-items: center;
+    gap:12px;
+    flex-wrap:wrap;
+    align-items: center;
+    
+  }
+  .status{
+   color: var(--clr-second);
+   font-size: 1.1rem;
+   font-weight: var(--fw-base);
+}
+.name{
+    color: var(--White);
+font-weight: var(--fw-bold);
+font-size: 1.2rem;
+
+
+}
+.name-status{
+   align-items: flex-start;
+   padding:10px;
+ 
+}
+.name-status p {
+    line-height: 1.2;
+}
+
+
+
+/* @media (max-width:200px){
+  * {
+    font-size: 13px;
+  }
+  main{
+    display: grid;
+    padding: 100px;
+    
+  }
+  
+  .reviews {
+   display: flex;
+   flex-direction: column;
+  }
+  .review {
+    max-height:15vh;
+ }
+ 
+  }
+.quotes {
+  display: grid;
+  
+}
+.card {
+
+  .quote{
+    max-width: 100%;
+    font-size: 10px;
+  }
+  .split{
+    gap:2px;
+    margin-bottom: 10px;
+  }
+
+   */
+
+@media (minx-width:650px ){
+  main{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 3rem;
+    padding:6rem 5rem 0rem 6rem ;
+       gap:5rem 5rem;}
+      
+      header{
+           grid-column: 1/2;
+           text-align: start;
+           width: 25rem;
+           padding: 1rem;
+          
+       
+       }
+       header p{
+        
+         font-size: 1.2rem;
+       }
+       header h1 {
+         font-size: 3rem;
+       }
+  .reviews{
+            grid-column:2/3;
+            max-width: 25rem;
+           
+            justify-content: flex-end;
+          
+            margin-top: 4rem;
+            padding: 0rem;
+            
+            
+            
+          }
+          
+          .review {
+            display: flex;
+         
+            
+           max-height: 6vh;
+           justify-content: center;
+           align-items: center;
+            justify-content: center;
+            
+           
+            
+            
+           
+        
+            
+          }
+          .reviews:nth-child(1){
+            
+          }
+
+        .review-text{
+            font-size: 0.9rem;
+           
+        }
+        .review-text {
+        padding-inline: 0rem;
+          
+        
+
+      }
+        .review:nth-child(1){
+          transform: translate(-2.3rem);
+          
+        }
+        .review:nth-child(2){
+          
+        }
+        .review:nth-child(3){
+          
+          transform: translate(2.3rem);
+          }
+        .stars{
+         width: 50% ;
+         margin: 0;
+         padding: 0;
+          
+        }
+        .quotes {
+            grid-column: 1 / -1;
+            flex-direction: row;
+          flex: 1 0 0;
+            gap: .5rem;
+            ;
+          
+        
+            
+            
+          }
+          .quote{
+            
+           
+            font-size: 1rem;
+            padding: 0.2rem;
+            justify-content: center;
+            align-items: center;
+            
+           
+            
+            
+        }
+        .name-status p{
+          font-size: 0.9rem;
+        }
+       
+        li:nth-child(1){
+          transform: translateY(-2rem)
+        }
+        li:nth-child(2){
+             
+         }
+         li:nth-child(3){
+          transform: translateY(2rem)
+          
+        }
+        .split img{
+          width: 3.7vw;
+      
+        }
+      
+      
+        
+      
+      }
+       
+      
+       
+ 
+
+  
+  @media (min-width: 1000px){
+   
+   main{
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     padding-top: 4rem;
+     padding-inline:7rem;
+     gap: 6rem 6rem;
+    }
+    header{
+      grid-column: 1/2;
+      width: 36rem;
+      padding: 2rem;
+         
+       
+    }
+    header p{
+         
+          font-size: 1.3rem;
+        }
+        header h1 {
+          font-size: 4rem;
+        }
+        .reviews{
+            grid-column:2/3;
+            max-width: 36rem;
+            justify-content: center;
+        
+           
+            
+            
+            
+          }
+          
+     .review {  
+     display: flex;
+     justify-content: center;
+      align-items: center;
+     justify-content: stretch;
+     gap:25px;
+    padding: 2rem;
+      }
+   
+
+        .review-text{
+            font-size: 1.3rem;
+            line-height: 0;
+           
+        }
+        .review-text {
+        padding-inline: 0rem;
+          
+        
+
+      }
+        .review:nth-child(1){
+          transform: translate(-4.3rem);
+          
+        }
+        .review:nth-child(2){
+          
+        }
+        .review:nth-child(3){
+          
+          transform: translate(4.3rem);
+          }
+        .stars{
+         width: 10vw;
+        }
+        .quotes {
+            grid-column: 1 / -1;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            ;
+            
+        
+            
+            
+          }
+          .quote{
+            
+           
+            font-size: 1.3rem;
+            padding: 1.2rem;
+            justify-content: center;
+            align-items: center;
+      
+            
+            
+        }
+       
+        li:nth-child(1){
+          transform: translateY(-2rem)
+        }
+        li:nth-child(2){
+             
+         }
+         li:nth-child(3){
+          transform: translateY(2rem)
+          
+        }
+        .split img{
+          width: 3.7vw;
+        }
+      
+        
+      }
+      
